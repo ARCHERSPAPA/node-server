@@ -1,4 +1,4 @@
-# 我的serever服务器
+# 我的serever服务器(端口9000,默认进入之后进入加载页，点击首页进入)
 1. 第一步加载Nodez中的相应模块
 ```
 var http= require('http') 加载http模块
@@ -14,3 +14,4 @@ var url = require('url')响应路径处理url
 4. 第四步将我解析出的路径和静态路径进行拼接得到一个文件的读取路径，filepath= path.join(spath,parboj)
 
 5. 第五步使用readFile(filepath-读取文件使用的路径，"binary"以2进制方式读取，因为文件不止字符，匿名函数err前面读取失败之后执行err，else成功返回数据)
+

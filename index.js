@@ -6,8 +6,15 @@ function Static(spath,req,res){
    
     var parobj= url.parse(req.url,true)
  
+
+    if(parobj.pathname === '/'){
+        parobj.pathname += 'welcome.html'
+      
+      }
     var filepath = path.join(spath,parobj.pathname)
     console.log(filepath)
+    
+
     fs.readFile(filepath,'binary',function(err,filecontent){
         if(err){
             res.writeHead(404,'buxi')

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0
+        }
+    .flip{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+   
+       
+
+    }
+
+    .hidden{
+        display: none;
+       
+    }
+    .flip.log .login,
+    .flip.fregister .register{
+        transform: rotateY(0deg);
+        backface-visibility: hidden;
+        transition: all 1s
+    }
+    .flip.log .register,
+    .flip.fregister .login{
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        transition: all 1s
+    }
+    .dengl{
+        float: right;
+        width: 30px;
+        height: 30px
+    }
+    .register{
+        position: absolute;
+        top:-3px;
+        box-shadow: 10px 20px 10px 10px rgba(33,3,3,0.7);
+        width: 400px;
+        height: 300px;
+        background: whitesmoke
+    }
+    .login{
+        box-shadow: 2px 3px 10px 10px rgba(33,3,3,0.7);
+        width: 400px;
+        height: 200px;
+        background: whitesmoke
+    }
+    .close{
+        float: right;
+        width: 20px;
+        height: 20px
+    }
+    .clearfixed::after{
+        clear: both;
+        content: '';
+        display: block
+    }
+    a{
+        text-decoration: none;
+        margin-right: 8px;
+        color: black
+    }
+    .nav{
+      float: left;
+       
+        background: pink;
+         border-radius: 20px;
+        width: 30%;
+        
+    }
+    
+    input[type="password"],input[type="text"],input[type="email"]{
+        margin-top: 10px;
+        outline: none;
+        border:none;
+        background: none;
+    }
+    .login .input{
+        border: 1px solid rgba(77, 166, 224, 0.4);
+        margin: 10px 10px 10px 40px
+    }
+    .input{
+        border: 1px solid rgba(77, 166, 224, 0.4);
+        margin: 5px 10px 0px 40px;
+        line-height: 28px;
+        position: relative;
+        
+    }
+    #content form{
+        margin-top: 40px;
+    }
+    html{
+        height: 100%
+    }
+    body{
+        height: 100%;
+        background: linear-gradient(to left,rgba(190, 209, 209, 0.3),rgba(224, 159, 19, 0.3)),url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554107489597&di=b70e6b856511015b4206081a7c6568f3&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F14%2F20161214073351_354Vy.jpeg) center no-repeat;
+        background-size: cover;
+        margin: 0
+    }
+    .jiaoyan{
+        font-size: 10px;
+        color: salmon;
+        margin-left: 60px
+    }  
+    a:visited{
+        text-decoration: red;
+        text-shadow: 2px 2px 2px 2px #333
+    }
+    a:hover{
+        color: aliceblue
+    }
+     .duiqi{
+         text-align: justify;
+         width: 64px;
+         display: inline-block;
+         height: 23px;
+         overflow: hidden;
+     }
+     .duiqi::after{
+         content: '';
+         display: inline-block;
+         width: 64px;
+        
+         border: 1px solid blue
+     }
+   
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#"><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1554110438505&di=05452adf710c8b874315c2ec2986d2cf&imgtype=0&src=http%3A%2F%2Fp2.so.qhimgs1.com%2Ft0194747ca3738cb80e.jpg" alt="" class="dengl"></a>
+    </header>
+    <main>
+    <div id="content" class="flip hidden log ">
+        <div class="login clearfixed"><a href="#"><img src="./cross.svg" alt="guanbi" class="close"></a>
+           <div class="nav">
+        <span style="margin: 8px"><a href="#" class="lianjie" >登录</a></span> 
+        <span><a href="#" class="lianjie">注册</a></span> 
+        
+    </div>
+        <form action="/a" method="GET" autocomplete="on">
+            <div class="jiaoyan"><label></label></div>
+        <div class="input">
+            <label for="dlname">用户名:</label>
+            <input type="text" name="dlname" id="dlname"placeholder="用户名" required>
+        </div>
+        <div class="input">
+            <label for="dlpa" class="duiqi">密码:</label>
+            <input type="password" required placeholder="请输入密码" name="dlpa" id="dlpa">
+        </div>
+        <div class="logg">
+            <input type="submit" value="登录" style="float:right;margin: 10px">
+        </div> 
+    </form>
+        </div>
+
+        <!-- 注册 -->
+        <div class="register clearfixed">
+                <a href="#" ><img src="./cross.svg" alt="guanbi" class="close"></a>
+                <div  class="nav">
+               <span style="margin: 8px"><a href="#" class="lianjie">登录</a></span> 
+                <a href="#" class="lianjie">注册</a>
+        
+            </div>
+                <form action="/b" method="POST" autocomplete="on" class="clearfixed">
+                   <div class="jiaoyan"><label></label></div>
+                <div class="input">
+                    <label for="dlname1">用户名:</label>
+                    <input type="text" name="dlname" id="dlname1"placeholder="用户名">
+                </div>
+                <div class="input">
+                    <label for="dlpa1"style="margin-left:1em">密码:</label>
+                    <input type="password" required placeholder="请输入密码" name="dlpa" id="dlpa1">
+                </div>
+                <div class="input">
+                        <label for="dlpa2"style="margin-left:1em">密码:</label>
+                        <input type="password" required placeholder="请再次输入密码" name="dlpa1" id="dlpa2">
+                    </div>
+                <div class="input">
+                        <label for="ema"style="margin-left:1em">邮箱:</label>
+                        <input type="email" required placeholder="你的邮箱地址" name="ema" id="ema">
+                    </div>
+                    <div style="margin-left: 60px">
+                          男：<input type="radio" name="sex" value="man">
+                          女：<input type="radio" name="sex" value="women">
+                        </div>
+                <div>
+                    <input type="submit" value="注册" style="float:right;margin: 25px 10px" class="zhuce">
+                </div> 
+            </form>
+        </div>
+    </div>
+</main>
+</body>
+ <script>
+ function $(i){
+    return document.querySelector(i)
+ }
+ function $$(i){
+    return document.querySelectorAll(i)
+ }
+ $('header img').addEventListener('click',function(i){
+     if($('#content').classList.contains('hidden')){
+     $('#content').classList.remove('hidden')
+     $('#content').classList.add('display')
+     }
+     else{
+        $('#content').classList.add('hidden')
+     }
+ })
+ $$('.login .lianjie')[1].addEventListener('click',function(){
+     if($('#content').classList.contains('log')){
+        $('#content').classList.remove('log')
+        $('#content').classList.add('fregister')
+     }
+ })
+ $$('.register .lianjie')[0].addEventListener('click',function(){
+     if($('#content').classList.contains('fregister')){
+        $('#content').classList.remove('fregister')
+        $('#content').classList.add('log')
+     }
+ })
+ $$('.close')[0].addEventListener('click',function(){
+     $('#content').classList.add('hidden')
+ })
+ $$('.close')[1].addEventListener('click',function(){
+    $('#content').classList.add('hidden')
+ })
+ $('.logg').addEventListener('click',function(){
+     var chx=/\s/
+     if(chx.test($('#dlname').value)){
+         $$('.jiaoyan')[0].innerText='用户名不正确，请检查格式!'
+         return false
+     }
+ })
+ $('.zhuce').addEventListener('click',function(){
+     var chx=/\s/
+     if(chx.test($('#dlname1').value)){
+         $$('.jiaoyan')[1].innerText='用户名不正确，请检查格式!'
+         return false
+     }
+ })
+ 
+ </script>
+</html>
